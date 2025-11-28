@@ -66,7 +66,7 @@
       justify-content: center;
       overflow: hidden;
     }
-    /* Put your logo file at: logo.png */
+    /* logo.png */
     .logo img {
       width: 100%;
       height: 100%;
@@ -230,7 +230,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
       font-size: 0.9rem;
       font-weight: 600;
     }
@@ -244,24 +244,36 @@
       border: 1px solid rgba(191, 219, 254, 0.9);
     }
 
-    .hero-image {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin-bottom: 0.75rem;
+    /* HERO SUMMARY BOX (no image here) */
+    .hero-summary {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
     }
-    /* Put your home hero image at: home-hero.jpg */
-    .hero-image img {
-      width: 100%;
-      height: auto;
+
+    .hero-points {
+      list-style: none;
+      font-size: 0.84rem;
+    }
+    .hero-points li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+    .hero-points li::before {
+      content: "•";
+      color: var(--primary);
+      margin-top: 0.1rem;
     }
 
     .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      margin-top: 0.6rem;
       font-size: 0.8rem;
       color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
     }
 
     .trust-row {
@@ -350,7 +362,7 @@
       overflow: hidden;
       border: 1px solid var(--border);
     }
-    /* Put an about/team image at: about-team.jpg */
+    /* mission-image.jpg */
     .about-image img {
       width: 100%;
       height: auto;
@@ -447,7 +459,7 @@
   <div class="nav">
     <a href="index.html" class="brand">
       <div class="logo">
-        <img src="Logo.jpg" alt="Finesse Web Solutions logo" />
+        <img src="logo.png" alt="Finesse Web Solutions logo" />
       </div>
       <div class="brand-text">
         <strong>Finesse Web Solutions</strong>
@@ -504,22 +516,27 @@
     <aside class="hero-right">
       <div class="hero-card">
         <div class="hero-card-header">
-          <span>Real small-business style website</span>
-          <span class="hero-chip">Demo screenshot</span>
+          <span>How we help small businesses</span>
+          <span class="hero-chip">Clear &amp; simple</span>
         </div>
-        <div class="hero-image">
-          <!-- Put your main homepage preview at: home-hero.jpg -->
-          <img src="Plumbing.jpg" alt="Preview of a website built by Finesse Web Solutions" />
-        </div>
+        <p class="hero-summary">
+          We design and build a 3-page website that explains what you do,
+          highlights your services, and makes it easy for people to contact you.
+        </p>
+        <ul class="hero-points">
+          <li>Built around your business, not generic templates.</li>
+          <li>Focused on clarity, trust, and taking action.</li>
+          <li>Ready to use and share as soon as we launch.</li>
+        </ul>
         <div class="hero-card-footer">
-          <div>Built for clarity, trust, and easy contact.</div>
-          <div>Designed for phones, tablets, and desktops.</div>
+          <span>One straightforward process from first call to launch.</span>
+          <span>Perfect for small businesses all over the U.S.</span>
         </div>
       </div>
 
       <div class="trust-row">
         <span>Simple process from call to launch</span>
-        <span>Focused on small businesses, not big agencies</span>
+        <span>Focused on real small-business needs</span>
       </div>
     </aside>
   </section>
@@ -563,8 +580,8 @@
       </article>
 
       <aside class="about-image">
-        <!-- Put an image like your team / workspace: about-team.jpg -->
-        <img src="about-team.jpg" alt="Finesse Web Solutions team or workspace" />
+        <!-- 1st homepage image: mission-image.jpg -->
+        <img src="mission-image.jpg" alt="Business owner reviewing their new website" />
       </aside>
     </div>
   </section>
@@ -574,7 +591,7 @@
     <div class="section-header">
       <h2 class="section-title">Example websites we can build</h2>
       <p class="section-sub">
-        Here are three demo styles that show how we present different kinds of
+        Three demo styles that show how we present different kinds of
         businesses clearly and professionally.
       </p>
     </div>
@@ -582,46 +599,46 @@
     <div class="portfolio-grid">
       <article class="portfolio-item">
         <div class="portfolio-thumb">
-          <!-- Put a screenshot for a service business at: example-service.jpg -->
-          <img src="example-service.jpg" alt="Example service business website" />
+          <!-- 2nd homepage image: example-plumbing.jpg -->
+          <img src="example-plumbing.jpg" alt="Example plumbing company website" />
         </div>
-        <h3>Local Service Business</h3>
+        <h3>Plumbing Company</h3>
         <div class="portfolio-tagline">
-          A clean, trustworthy site for a local service provider (like a plumber,
-          roofer, or cleaner).
+          A clear, trustworthy site for a local plumber with services, reviews,
+          and a tap-to-call button.
         </div>
         <div class="portfolio-meta">
-          Focus: clear services, strong call-to-call button, simple contact section.
+          Focus: services list, emergency contact button, simple quote request.
         </div>
       </article>
 
       <article class="portfolio-item">
         <div class="portfolio-thumb">
-          <!-- Put a screenshot for a restaurant at: example-restaurant.jpg -->
-          <img src="example-restaurant.jpg" alt="Example restaurant or cafe website" />
+          <!-- 3rd homepage image: example-restaurant.jpg -->
+          <img src="example-restaurant.jpg" alt="Example restaurant website" />
         </div>
-        <h3>Restaurant or Café</h3>
+        <h3>Restaurant</h3>
         <div class="portfolio-tagline">
-          A bright layout that highlights your menu, photos, and how to visit or
-          order.
+          A warm layout for a restaurant or café, featuring menu highlights,
+          photos, and location details.
         </div>
         <div class="portfolio-meta">
-          Focus: menu overview, hours &amp; location, and easy phone call button.
+          Focus: menu overview, hours, location map link, and call to reserve.
         </div>
       </article>
 
       <article class="portfolio-item">
         <div class="portfolio-thumb">
-          <!-- Put a screenshot for a professional service at: example-pro.jpg -->
-          <img src="example-pro.jpg" alt="Example professional services website" />
+          <!-- 4th homepage image: example-barbershop.jpg -->
+          <img src="example-barbershop.jpg" alt="Example barber shop website" />
         </div>
-        <h3>Professional Services</h3>
+        <h3>Barber Shop</h3>
         <div class="portfolio-tagline">
-          A modern, minimal site for consultants, coaches, or other professional
-          services.
+          A modern site for a barber shop that showcases style, pricing, and
+          how to book a cut.
         </div>
         <div class="portfolio-meta">
-          Focus: what you offer, who you help, and a simple way to book a call.
+          Focus: services and pricing, gallery space, and easy booking/contact.
         </div>
       </article>
     </div>
