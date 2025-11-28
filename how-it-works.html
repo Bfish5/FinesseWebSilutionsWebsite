@@ -7,20 +7,20 @@
   <style>
     :root {
       --primary: #1f4fff;
-      --primary-dark: #102a7a;
-      --primary-soft: #e3ecff;
-      --accent: #0ea5e9;
-      --bg: #f5f7fb;
+      --primary-dark: #102861;
+      --primary-soft: #e5edff;
+      --accent: #22c55e;
+      --bg: #f4f7fc;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #6b7280;
       --border: #e2e8f0;
       --radius-lg: 18px;
       --radius-md: 12px;
-      --shadow-soft: 0 16px 36px rgba(15, 23, 42, 0.16);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -52,37 +52,37 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.85rem;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      overflow: hidden;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
     }
-
     .brand-text strong {
       font-size: 0.96rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-
     .brand-text span {
-      font-size: 0.8rem;
-      opacity: 0.8;
+      font-size: 0.78rem;
+      opacity: 0.85;
     }
 
     nav ul {
@@ -92,7 +92,6 @@
       gap: 1.5rem;
       font-size: 0.94rem;
     }
-
     nav a { opacity: 0.85; }
     nav a:hover,
     nav a.active { opacity: 1; font-weight: 600; }
@@ -104,7 +103,7 @@
       color: #eff6ff;
       font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.5);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
     }
 
     .hero {
@@ -112,30 +111,38 @@
       margin: 0 auto;
       padding: 0 1.5rem 2.1rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 2rem;
       align-items: center;
     }
 
-    .hero-title {
-      font-size: clamp(2rem, 2.3vw + 1rem, 2.5rem);
-      margin-bottom: 0.6rem;
+    .pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #93c5fd;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 2.5vw + 1rem, 2.6rem);
+      margin-bottom: 0.5rem;
     }
 
     .hero-sub {
       font-size: 0.96rem;
-      opacity: 0.9;
       max-width: 520px;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
+      color: #e5e7eb;
     }
 
-    .hero-note {
-      font-size: 0.82rem;
-      opacity: 0.85;
+    .hero-tagline {
+      font-size: 0.86rem;
+      color: #cbd5f5;
     }
 
     .hero-card {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.95);
       border-radius: 18px;
       padding: 1.4rem 1.3rem 1.6rem;
       box-shadow: var(--shadow-soft);
@@ -143,31 +150,31 @@
     }
 
     .hero-card h2 {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
       margin-bottom: 0.5rem;
     }
 
     .hero-card p {
-      font-size: 0.86rem;
-      opacity: 0.92;
-      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+      opacity: 0.9;
+      margin-bottom: 0.55rem;
     }
 
-    .hero-card-list {
+    .hero-list {
       list-style: none;
       font-size: 0.84rem;
+      color: #cbd5f5;
       margin-top: 0.4rem;
     }
 
-    .hero-card-list li {
+    .hero-list li {
       display: flex;
       gap: 0.4rem;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
     }
-
-    .hero-card-list li::before {
-      content: "•";
-      color: #60a5fa;
+    .hero-list li::before {
+      content: "✓";
+      color: #4ade80;
       margin-top: 0.06rem;
     }
 
@@ -178,39 +185,90 @@
       gap: 0.4rem;
       margin-top: 0.9rem;
       padding: 0.85rem 1.5rem;
-      background: var(--primary);
-      color: #eff6ff;
+      background: #ffffff;
+      color: #020617;
       border-radius: 999px;
       font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.7);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.8);
     }
 
     main {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 0 1.5rem 3.5rem;
+      padding: 0 1.5rem 3.4rem;
     }
 
-    .section {
-      margin-bottom: 2.8rem;
-    }
-
+    .section { margin-bottom: 2.9rem; }
     .section-title {
       font-size: 1.3rem;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
-
     .section-sub {
       font-size: 0.9rem;
       color: var(--muted);
-      margin-bottom: 1.4rem;
-      max-width: 620px;
+      margin-bottom: 1.2rem;
+      max-width: 640px;
     }
 
     .timeline {
+      position: relative;
+      margin-top: 0.6rem;
+      padding-left: 1.4rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-soft);
+    }
+
+    .step {
+      position: relative;
+      margin-bottom: 1.4rem;
+      padding-left: 0.8rem;
+    }
+
+    .step-marker {
+      position: absolute;
+      left: -1.6rem;
+      top: 0.15rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 2px solid var(--primary);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: var(--primary-dark);
+    }
+
+    .step-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .step-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .step p {
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .two-column {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1.7rem;
       align-items: flex-start;
     }
@@ -220,145 +278,116 @@
       border-radius: var(--radius-lg);
       padding: 1.4rem 1.3rem 1.6rem;
       border: 1px solid rgba(226, 232, 240, 0.9);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06);
       font-size: 0.9rem;
     }
 
-    .step-list {
-      list-style: none;
-      margin-top: 0.4rem;
+    .card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.4rem;
     }
 
-    .step-item {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-      align-items: flex-start;
-    }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid var(--primary-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      background: var(--primary-soft);
-    }
-
-    .step-body h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .step-body p {
+    .card p {
       font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .list {
+      list-style: none;
+      font-size: 0.86rem;
+    }
+
+    .list li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--primary);
+      margin-top: 0.12rem;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--primary);
+      margin-top: 0.08rem;
+    }
+
+    .info-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    .faq-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 0.9rem 1rem;
+      background: #f9fafb;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-a {
+      font-size: 0.86rem;
       color: var(--muted);
     }
 
-    .timeline-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-      margin-top: 1.1rem;
-      font-size: 0.84rem;
-    }
-
-    .meta-pill {
-      background: var(--primary-soft);
-      border-radius: var(--radius-md);
-      padding: 0.75rem 0.8rem;
-      color: var(--primary-dark);
-    }
-
-    .meta-pill strong {
-      display: block;
-      font-size: 0.86rem;
-      margin-bottom: 0.1rem;
-    }
-
-    .requirements-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.7rem;
-      align-items: flex-start;
-    }
-
-    .requirements-list {
-      list-style: none;
-      margin-top: 0.4rem;
-      font-size: 0.86rem;
-    }
-
-    .requirements-list li {
-      display: flex;
-      gap: 0.4rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .requirements-list li::before {
-      content: "✓";
-      color: var(--primary);
-      margin-top: 0.05rem;
-    }
-
-    .faq-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      padding: 1.3rem 1.3rem 1.5rem;
-      border: 1px dashed var(--border);
-      font-size: 0.86rem;
-    }
-
-    .faq-item + .faq-item {
-      margin-top: 0.9rem;
-      padding-top: 0.8rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .faq-item h3 {
-      font-size: 0.9rem;
-      margin-bottom: 0.2rem;
-    }
-
     .cta-banner {
-      margin-top: 0.4rem;
+      margin-top: 0.6rem;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #eff6ff;
       border-radius: 20px;
-      padding: 1.3rem 1.4rem 1.5rem;
+      padding: 1.4rem 1.4rem 1.6rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 1rem;
       align-items: center;
+      gap: 1rem;
       box-shadow: var(--shadow-soft);
-      font-size: 0.9rem;
     }
 
     .cta-banner h2 {
-      font-size: 1.1rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cta-banner p {
+      font-size: 0.86rem;
+      max-width: 480px;
+      opacity: 0.95;
     }
 
     .cta-banner a {
       background: #ffffff;
       color: var(--primary-dark);
-      padding: 0.85rem 1.5rem;
+      padding: 0.9rem 1.6rem;
       border-radius: 999px;
-      font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.6);
+      font-weight: 600;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 1.6rem 1.5rem 2.2rem;
+      padding: 1.6rem 1.5rem 2rem;
       text-align: center;
       font-size: 0.8rem;
       color: var(--muted);
@@ -371,8 +400,7 @@
 
     @media (max-width: 880px) {
       .hero,
-      .timeline,
-      .requirements-grid {
+      .two-column {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -386,46 +414,52 @@
 <header>
   <div class="nav">
     <a href="index.html" class="brand">
-      <div class="logo">FW</div>
+      <div class="logo">
+        <img src="logo.png" alt="Finesse Web Solutions logo" />
+      </div>
       <div class="brand-text">
         <strong>Finesse Web Solutions</strong>
-        <span>Modern websites, simple process</span>
+        <span>Websites built with a clear process</span>
       </div>
     </a>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="how-it-works.html">How It Works</a></li>
+        <li><a href="how-it-works.html" class="active">How It Works</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a class="nav-cta" href="tel:+14437972249">Contact Us</a></li>
+        <li><a class="nav-cta" href="tel:14437972249">Contact Us</a></li>
       </ul>
     </nav>
   </div>
 
   <section class="hero">
     <div>
-      <h1 class="hero-title">How your website goes from idea to live in 1 day.</h1>
+      <div class="pill">How it works</div>
+      <h1>From first call to live website in one simple flow.</h1>
       <p class="hero-sub">
-        Our process is built for busy business owners: one phone call, one Zoom,
-        and your new 3-page website is launched.
+        We follow a straightforward process: a call to understand your business,
+        a focused build day, and a final Zoom call to polish and publish your site.
       </p>
-      <p class="hero-note">
-        Below is the exact timeline and what we need from you so there are no surprises.
+      <p class="hero-tagline">
+        No drawn-out timelines, no confusing back-and-forth. Just a clear path
+        from “I need a website” to “Here’s the link.”
       </p>
     </div>
 
     <aside class="hero-card">
-      <h2>Overview of the process</h2>
+      <h2>What you can expect</h2>
       <p>
-        Everything we do fits into a short, focused flow so you always know what’s happening.
+        We keep things predictable and easy to follow so you always know where
+        your website stands.
       </p>
-      <ul class="hero-card-list">
-        <li>Step 1: Free phone call to see if it’s a fit.</li>
-        <li>Step 2: We prepare your website based on that call.</li>
-        <li>Step 3: Zoom meeting the next day to finalize and publish.</li>
+      <ul class="hero-list">
+        <li>One main contact from start to finish.</li>
+        <li>A dedicated build window focused on your site.</li>
+        <li>Clear opportunities to give feedback.</li>
+        <li>A live website at the end of the process.</li>
       </ul>
-      <a class="hero-btn" href="tel:+14437972249">
-        📞 Book the first call
+      <a class="hero-btn" href="tel:14437972249">
+        📞 Contact Us to Start Your Website
       </a>
     </aside>
   </section>
@@ -434,150 +468,173 @@
 <main>
   <!-- TIMELINE -->
   <section class="section">
-    <h2 class="section-title">Timeline from first call to live site</h2>
+    <h2 class="section-title">Timeline: what happens and when</h2>
     <p class="section-sub">
-      Here is how the 1-day turnaround works in practice, starting from the moment
-      you reach out by phone.
+      Here’s the high-level overview of how we go from first conversation to
+      launching your 3-page website.
     </p>
 
     <div class="timeline">
-      <article class="card">
-        <ul class="step-list">
-          <li class="step-item">
-            <div class="step-number">1</div>
-            <div class="step-body">
-              <h3>Initial call &amp; fit check</h3>
-              <p>
-                You call us and we talk through your business, what you do, who you
-                serve, and what you’d like your website to accomplish. If it’s a good
-                fit, you decide to move forward with the $1,000 package.
-              </p>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-number">2</div>
-            <div class="step-body">
-              <h3>We outline your 3 pages</h3>
-              <p>
-                Based on the call, we map out your 3-page website: how each page fits
-                together, the order of content, and what your visitors should see first.
-              </p>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-number">3</div>
-            <div class="step-body">
-              <h3>Build &amp; prepare for review</h3>
-              <p>
-                We design and build the website, set up your free hosting, and have
-                everything ready for you to review on the Zoom call the very next day.
-              </p>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-number">4</div>
-            <div class="step-body">
-              <h3>Zoom call &amp; publish</h3>
-              <p>
-                On the Zoom call, we walk through each page with you, apply your
-                feedback within your included revision round, and then publish the
-                website live.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </article>
+      <div class="step">
+        <div class="step-marker">1</div>
+        <div class="step-title">Initial call – learn about your business</div>
+        <div class="step-meta">Before we start building</div>
+        <p>
+          We hop on a call to understand your business, who you serve, and what
+          you need your website to do. We talk through the pages you want and
+          the style you’re going for.
+        </p>
+      </div>
 
-      <aside class="card">
-        <h3>Key details at a glance</h3>
-        <div class="timeline-meta">
-          <div class="meta-pill">
-            <strong>Duration</strong>
-            Day 1: Call &amp; planning<br />
-            Day 2: Zoom review &amp; launch
-          </div>
-          <div class="meta-pill">
-            <strong>Pages</strong>
-            3 custom website pages tailored to your business.
-          </div>
-        </div>
-        <div class="timeline-meta">
-          <div class="meta-pill">
-            <strong>Hosting</strong>
-            Hosting is set up for you and stays free.
-          </div>
-          <div class="meta-pill">
-            <strong>Revision</strong>
-            One focused revision round during the Zoom call.
-          </div>
-        </div>
-      </aside>
+      <div class="step">
+        <div class="step-marker">2</div>
+        <div class="step-title">Content &amp; details collected</div>
+        <div class="step-meta">Right after the call</div>
+        <p>
+          You send us your logo, any photos you’d like to use, your business
+          details, and key information about your services. We organize it so
+          your website tells a clear story.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">3</div>
+        <div class="step-title">Build day – we create your website</div>
+        <div class="step-meta">Typically the next day</div>
+        <p>
+          We design and build your 3-page site based on what we discussed. While
+          we’re working, you don’t need to do anything&mdash;we’ll let you know
+          when it’s ready to review.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">4</div>
+        <div class="step-title">Zoom call – review and refine</div>
+        <div class="step-meta">After the build is complete</div>
+        <p>
+          We hop on a Zoom call, walk you through the website page by page, and
+          collect your feedback. This is where we make your included round of
+          revisions and polish anything that needs adjustment.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">5</div>
+        <div class="step-title">Launch – your site goes live</div>
+        <div class="step-meta">After revisions are approved</div>
+        <p>
+          Once you’re happy with everything, we publish your website so it’s
+          available to the world. You get a link you can share on social media,
+          business cards, email, and anywhere else people find you.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- EVERYTHING YOU NEED TO KNOW / REQUIREMENTS -->
+  <!-- EVERYTHING THEY NEED TO PROVIDE -->
   <section class="section">
     <h2 class="section-title">What we need from you</h2>
     <p class="section-sub">
-      To keep the turnaround fast and smooth, here’s what you should have ready
-      when we work together.
+      To keep the process smooth and fast, here’s what you’ll provide and what
+      we handle on our side.
     </p>
 
-    <div class="requirements-grid">
+    <div class="two-column">
       <article class="card">
-        <h3>Before the first call</h3>
-        <ul class="requirements-list">
-          <li>A short description of what your business does.</li>
-          <li>The main service or product you want to highlight.</li>
-          <li>Any existing links (social, Google listing, etc.).</li>
+        <h3>From your side</h3>
+        <p>
+          You don’t need to know anything about design or code. We just need
+          the raw pieces that tell the story of your business.
+        </p>
+        <ul class="list checklist">
+          <li>Your business name and contact details.</li>
+          <li>A short description of what you do and who you serve.</li>
+          <li>Any services you want listed on the website.</li>
+          <li>Your logo files and branding colors (if you have them).</li>
+          <li>Photos you want to use (or we can suggest stock-style imagery).</li>
+          <li>Links to any social profiles you’d like added.</li>
         </ul>
-
-        <h3 style="margin-top:1.1rem;">Before the Zoom review</h3>
-        <ul class="requirements-list">
-          <li>A decision on your main call-to-action (call, email, form, etc.).</li>
-          <li>Your preferred business name, tagline, and contact details.</li>
-          <li>Any photos or logos you want included on the website.</li>
-        </ul>
+        <p class="info-note">
+          If you’re not sure how to write your text, we can help shape it into
+          clear website copy during the process.
+        </p>
       </article>
 
-      <aside class="faq-card">
-        <div class="faq-item">
-          <h3>Do I have to write all of the text?</h3>
-          <p>
-            No. We structure and write the website content based on what you
-            share with us in the call and Zoom session. You just provide the key
-            facts about your business.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h3>Do I have to handle the technical setup?</h3>
-          <p>
-            We take care of the website build and the hosting setup. You don’t
-            have to manage the technical side.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h3>What if I want changes later?</h3>
-          <p>
-            The package includes one revision round during the Zoom call. If you
-            want changes after launch, we can discuss additional updates separately.
-          </p>
-        </div>
-      </aside>
+      <article class="card">
+        <h3>From our side</h3>
+        <p>
+          We handle the structure, layout, and technical side so your website
+          looks clean and works well for visitors.
+        </p>
+        <ul class="list">
+          <li>Plan how your 3 pages are laid out and connected.</li>
+          <li>Design each page for clarity and easy navigation.</li>
+          <li>Build the site so it works on phones, tablets, and computers.</li>
+          <li>Prepare your contact points (phone, email, or forms).</li>
+          <li>Set up hosting so the site loads reliably.</li>
+        </ul>
+        <p class="info-note">
+          We’ll walk you through each decision so you never feel lost or
+          overwhelmed by options.
+        </p>
+      </article>
     </div>
+  </section>
+
+  <!-- FAQ STYLE INFO SPECIFIC TO PROCESS -->
+  <section class="section">
+    <h2 class="section-title">Process details &amp; common questions</h2>
+    <p class="section-sub">
+      A few extra details to help you understand how working with us will feel
+      day to day.
+    </p>
+
+    <ul class="faq-list">
+      <li class="faq-item">
+        <div class="faq-q">How long does it take to launch?</div>
+        <div class="faq-a">
+          After our first call and once we have your content, we typically build
+          your site the next day and then meet on Zoom to finalize and launch.
+          The exact timing depends on how quickly we can schedule the review
+          call.
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <div class="faq-q">Who am I talking to during the project?</div>
+        <div class="faq-a">
+          You work with our small team directly&mdash;no departments to chase
+          down. The same people who speak with you on the calls are the ones
+          building your site.
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <div class="faq-q">What if I want changes after I see the website?</div>
+        <div class="faq-a">
+          We include a revision round during the Zoom review. You can ask for
+          adjustments to text, images, and layout sections. Beyond that, future
+          changes can be handled as additional work when you need them.
+        </div>
+      </li>
+    </ul>
   </section>
 
   <!-- CTA -->
   <section class="section">
     <div class="cta-banner">
       <div>
-        <h2>Ready to walk through the details for your website?</h2>
+        <h2>Ready to walk through the process for your business?</h2>
         <p>
-          The first step is a simple phone call to see if this 1-day process is
-          the right fit for your business.
+          We’ll talk through your goals, explain exactly how the process will
+          work for your situation, and answer any questions you have before you
+          decide to move forward.
         </p>
       </div>
-      <a href="tel:+14437972249">📞 Contact Us at (443) 797-2249</a>
+      <a href="tel:14437972249">
+        📞 Contact Us – (443) 797-2249
+      </a>
     </div>
   </section>
 </main>
@@ -585,7 +642,7 @@
 <footer>
   &copy; <span id="year"></span> Finesse Web Solutions. All rights reserved.
   &nbsp;&middot;&nbsp;
-  <a href="pricing.html">See the $1,000 package details.</a>
+  <a href="tel:14437972249">Call us at (443) 797-2249</a>
 </footer>
 
 <script>
