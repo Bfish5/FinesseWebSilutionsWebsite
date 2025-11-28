@@ -7,24 +7,20 @@
   <style>
     :root {
       --primary: #1f4fff;
-      --primary-dark: #102a7a;
-      --primary-soft: #e3ecff;
-      --accent: #0ea5e9;
-      --bg: #f5f7fb;
+      --primary-dark: #102861;
+      --primary-soft: #e5edff;
+      --accent: #22c55e;
+      --bg: #f4f7fc;
+      --card: #ffffff;
       --text: #0f172a;
       --muted: #6b7280;
-      --card: #ffffff;
+      --border: #e2e8f0;
       --radius-lg: 18px;
       --radius-md: 12px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
-      --border-soft: #e2e8f0;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -34,20 +30,13 @@
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
 
     header {
       background: radial-gradient(circle at top left, #1f4fff, #020617);
       color: #f9fafb;
-      padding-bottom: 2.4rem;
+      padding-bottom: 2.3rem;
       box-shadow: var(--shadow-soft);
     }
 
@@ -56,47 +45,43 @@
       margin: 0 auto;
       padding: 1.1rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.85rem;
     }
 
     .logo {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.5);
+      background: rgba(15, 23, 42, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      font-weight: 700;
-      font-size: 0.9rem;
     }
-    .logo span {
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    /* Put your logo file at: logo.png */
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
-       <img src="Logo.jog" alt="Finesse Web Solutions logo" />
-  
 
     .brand-text {
       display: flex;
       flex-direction: column;
     }
-
     .brand-text strong {
       font-size: 1rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-
     .brand-text span {
       font-size: 0.8rem;
       opacity: 0.9;
@@ -110,18 +95,12 @@
       font-size: 0.95rem;
     }
 
-    nav a {
-      opacity: 0.85;
-    }
-
+    nav a { opacity: 0.85; }
     nav a:hover,
-    nav a.active {
-      opacity: 1;
-      font-weight: 600;
-    }
+    nav a.active { opacity: 1; font-weight: 600; }
 
     .nav-cta {
-      padding: 0.6rem 1.3rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 999px;
       background: #ffffff;
       color: var(--primary-dark);
@@ -136,7 +115,7 @@
       padding: 1.8rem 1.5rem 0;
       display: grid;
       grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 2.4rem;
+      gap: 2.2rem;
       align-items: center;
     }
 
@@ -144,12 +123,12 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.35rem 0.75rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.8);
+      border: 1px solid rgba(191, 219, 254, 0.9);
       font-size: 0.75rem;
       margin-bottom: 1rem;
-      background: rgba(15, 23, 42, 0.5);
+      background: rgba(15, 23, 42, 0.35);
     }
 
     .badge-dot {
@@ -161,89 +140,89 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.3rem, 2.8vw + 1rem, 3.2rem);
+      font-size: clamp(2.3rem, 2.8vw + 1rem, 3rem);
       line-height: 1.1;
       margin-bottom: 0.8rem;
     }
-
     .hero h1 span {
-      color: #e0f2fe;
+      color: #dbeafe;
     }
 
     .hero-tagline {
       font-size: 0.98rem;
-      max-width: 560px;
+      max-width: 540px;
       opacity: 0.95;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .hero-bullets {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.7rem 1.5rem;
+      gap: 0.6rem 1.4rem;
       margin-bottom: 1.4rem;
       font-size: 0.9rem;
     }
-
     .hero-bullets span {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
     }
-
     .hero-bullets span::before {
       content: "✓";
-      font-size: 0.9rem;
       color: #bbf7d0;
+      font-size: 0.9rem;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.9rem;
+      gap: 0.85rem;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
       padding: 0.9rem 1.7rem;
       border-radius: 999px;
       background: #ffffff;
       color: var(--primary-dark);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.5);
     }
 
     .btn-secondary {
       border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.8);
+      border: 1px solid rgba(191, 219, 254, 0.9);
       padding: 0.8rem 1.3rem;
       font-size: 0.88rem;
-      background: transparent;
+      background: rgba(15, 23, 42, 0.1);
       color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
     }
 
     .hero-note {
       font-size: 0.8rem;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
     .hero-right {
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.65);
       border-radius: 24px;
-      padding: 1.2rem 1.3rem 1.5rem;
+      padding: 1.15rem 1.2rem 1.4rem;
       box-shadow: var(--shadow-soft);
     }
 
     .hero-card {
       background: #ffffff;
       border-radius: 18px;
-      padding: 1rem 1rem 1.3rem;
+      padding: 1.05rem 1.05rem 1.25rem;
       color: var(--text);
     }
 
@@ -251,7 +230,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.75rem;
       font-size: 0.9rem;
       font-weight: 600;
     }
@@ -267,18 +246,14 @@
 
     .hero-image {
       border-radius: 14px;
-      border: 1px solid var(--border-soft);
       overflow: hidden;
-      margin-bottom: 0.8rem;
-      background: #e5e7eb;
+      border: 1px solid var(--border);
+      margin-bottom: 0.75rem;
     }
-
-    /* HERO IMAGE PLACEHOLDER
-       Replace "hero-dashboard.jpg" with a screenshot of a website you built */
+    /* Put your home hero image at: home-hero.jpg */
     .hero-image img {
       width: 100%;
       height: auto;
-      display: block;
     }
 
     .hero-card-footer {
@@ -289,62 +264,47 @@
       color: var(--muted);
     }
 
-    .hero-card-footer strong {
-      font-size: 1rem;
-      color: var(--primary-dark);
-    }
-
     .trust-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem;
-      margin-top: 0.9rem;
       font-size: 0.78rem;
       color: #e5e7eb;
-      opacity: 0.9;
+      margin-top: 0.85rem;
     }
-
     .trust-row span {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.35rem;
     }
-
     .trust-row span::before {
       content: "★";
-      font-size: 0.8rem;
       color: #facc15;
+      font-size: 0.8rem;
     }
 
     main {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 2.7rem 1.5rem 3.4rem;
+      padding: 2.5rem 1.5rem 3.4rem;
     }
 
-    .section {
-      margin-bottom: 2.8rem;
-    }
-
-    .section-header {
-      margin-bottom: 1.3rem;
-    }
-
+    .section { margin-bottom: 2.8rem; }
+    .section-header { margin-bottom: 1.3rem; }
     .section-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       margin-bottom: 0.3rem;
     }
-
     .section-sub {
       font-size: 0.9rem;
       color: var(--muted);
-      max-width: 620px;
+      max-width: 640px;
     }
 
     .about-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 1.7rem;
       align-items: flex-start;
     }
@@ -359,69 +319,89 @@
     }
 
     .card h3 {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       margin-bottom: 0.4rem;
     }
 
     .card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--muted);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.55rem;
     }
 
-    .card ul {
+    .values-list {
       list-style: none;
       font-size: 0.86rem;
     }
 
-    .card ul li {
+    .values-list li {
       display: flex;
       gap: 0.4rem;
       margin-bottom: 0.4rem;
     }
-
-    .card ul li::before {
-      content: "•";
+    .values-list li::before {
+      content: "✓";
       color: var(--primary);
-      margin-top: 0.1rem;
+      margin-top: 0.05rem;
     }
 
-    .about-photo {
-      background: var(--primary-soft);
+    .about-image {
       border-radius: var(--radius-md);
-      border: 1px dashed #bfdbfe;
-      padding: 0.95rem;
-      font-size: 0.8rem;
-      color: var(--primary-dark);
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
     }
-
-    .about-photo img {
-      border-radius: 10px;
+    /* Put an about/team image at: about-team.jpg */
+    .about-image img {
       width: 100%;
       height: auto;
     }
-    /* Replace hero-team.jpg with a friendly team / workspace photo */
 
-    .mission-grid {
+    .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.4rem;
     }
 
-    .mission-pill {
+    .portfolio-item {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.1rem 1.3rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.05);
+      font-size: 0.88rem;
+    }
+
+    .portfolio-thumb {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 0.6rem;
+    }
+
+    .portfolio-thumb img {
+      width: 100%;
+      height: auto;
+    }
+
+    .portfolio-item h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .portfolio-tagline {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .portfolio-meta {
       font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--primary-dark);
-      margin-bottom: 0.3rem;
+      color: var(--muted);
     }
 
     footer {
-      border-top: 1px solid var(--border-soft);
-      padding: 1.7rem 1.5rem 2.2rem;
+      border-top: 1px solid var(--border);
+      padding: 1.6rem 1.5rem 2rem;
       text-align: center;
       font-size: 0.8rem;
       color: var(--muted);
@@ -435,13 +415,13 @@
     @media (max-width: 880px) {
       .hero,
       .about-layout,
-      .mission-grid {
+      .portfolio-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .hero-right {
         order: -1;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.4rem;
       }
 
       nav ul {
@@ -454,7 +434,6 @@
         flex-direction: column;
         align-items: stretch;
       }
-
       .btn-primary,
       .btn-secondary {
         width: 100%;
@@ -467,10 +446,12 @@
 <header>
   <div class="nav">
     <a href="index.html" class="brand">
-      <div class="logo"><span>FW</span></div>
+      <div class="logo">
+        <img src="logo.png" alt="Finesse Web Solutions logo" />
+      </div>
       <div class="brand-text">
         <strong>Finesse Web Solutions</strong>
-        <span>Professional websites for small businesses</span>
+        <span>Websites that help small businesses grow</span>
       </div>
     </a>
     <nav>
@@ -478,7 +459,7 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a class="nav-cta" href="tel:+14437972249">Contact Us</a></li>
+        <li><a class="nav-cta" href="tel:14437972249">Contact Us</a></li>
       </ul>
     </nav>
   </div>
@@ -487,76 +468,71 @@
     <div>
       <div class="badge">
         <span class="badge-dot"></span>
-        Launch your new website in just 1 day
+        Custom 3-page websites for businesses across the U.S.
       </div>
       <h1>
-        Look Professional Online.<br />
-        <span>Give your business a website that works.</span>
+        Look professional online.<br />
+        <span>Turn visitors into customers.</span>
       </h1>
       <p class="hero-tagline">
-        Finesse Web Solutions designs and builds clean, modern websites for
-        small businesses across the U.S. so you can show up online with confidence.
+        Finesse Web Solutions builds clean, modern websites for small businesses in
+        the U.S. so you can show up online with confidence and send people somewhere
+        you’re proud of.
       </p>
 
       <div class="hero-bullets">
-        <span>We build for real small businesses</span>
-        <span>Clear structure, no tech confusion</span>
-        <span>Designed to support your growth goals</span>
-        <span>Focused on trust, clarity, and ease of use</span>
+        <span>Improve your online presence</span>
+        <span>Grow your customer base</span>
+        <span>Gain more leads from your site</span>
+        <span>Look more professional to new visitors</span>
       </div>
 
       <div class="hero-actions">
-        <a class="btn-primary" href="tel:+14437972249">
-          📞 Contact Us &amp; Book a Call
+        <a class="btn-primary" href="tel:14437972249">
+          📞 Contact Us – (443) 797-2249
         </a>
         <a class="btn-secondary" href="pricing.html">
-          See what you get for $1,000
+          View what’s included →
         </a>
       </div>
 
       <p class="hero-note">
-        One small team, working one-on-one with you to bring your website live quickly.
+        We handle the website. You focus on running your business.
       </p>
     </div>
 
-    <div class="hero-right">
+    <aside class="hero-right">
       <div class="hero-card">
         <div class="hero-card-header">
-          <span>Example project preview</span>
-          <span class="hero-chip">Screenshot placeholder</span>
+          <span>Real small-business style website</span>
+          <span class="hero-chip">Demo screenshot</span>
         </div>
         <div class="hero-image">
-          <img src="Plumbing.jpg" alt="Sample business website preview" />
+          <!-- Put your main homepage preview at: home-hero.jpg -->
+          <img src="home-hero.jpg" alt="Preview of a website built by Finesse Web Solutions" />
         </div>
         <div class="hero-card-footer">
-          <div>
-            <strong>3-page website</strong><br />
-            Built around your business goals.
-          </div>
-          <div>
-            <div>Custom layout &amp; copy</div>
-            <div>Simple for visitors to use</div>
-          </div>
+          <div>Built for clarity, trust, and easy contact.</div>
+          <div>Designed for phones, tablets, and desktops.</div>
         </div>
       </div>
 
       <div class="trust-row">
-        <span>Small-business friendly</span>
-        <span>Process designed to respect your time</span>
+        <span>Simple process from call to launch</span>
+        <span>Focused on small businesses, not big agencies</span>
       </div>
-    </div>
+    </aside>
   </section>
 </header>
 
 <main>
-  <!-- ABOUT US -->
+  <!-- ABOUT US / MISSION -->
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">About Finesse Web Solutions</h2>
+      <h2 class="section-title">About us &amp; our mission</h2>
       <p class="section-sub">
-        We’re a small team dedicated to building websites that help businesses show
-        up online with clarity and confidence&mdash;without turning things into a long,
-        confusing project.
+        We’re a small team that builds websites designed to help your business
+        grow—not just sit online.
       </p>
     </div>
 
@@ -564,65 +540,89 @@
       <article class="card">
         <h3>Who we are</h3>
         <p>
-          Finesse Web Solutions focuses on one thing: creating effective websites
-          for businesses across the U.S. Our role is to take the ideas in your
-          head and turn them into a website that represents you clearly online.
+          Finesse Web Solutions creates websites for small businesses all over
+          the U.S. We focus on simple, effective sites that clearly explain what
+          you do and make it easy for people to reach you.
         </p>
         <p>
-          You don’t need to know design, tech, or marketing. You just need to
-          know your business. We handle the layout, structure, and presentation
-          so you can keep running things while your website comes together.
+          You won’t be handed off between departments or forced into confusing
+          packages. You talk directly with the people who plan and build your
+          website from start to finish.
         </p>
+        <h3>Our mission</h3>
+        <p>
+          Our mission is to give small businesses a professional online presence
+          without complicated tech, monthly contracts, or hidden fees.
+        </p>
+        <ul class="values-list">
+          <li>Websites that feel like your business, not a generic template.</li>
+          <li>Clear communication at every step.</li>
+          <li>Design focused on helping visitors take action.</li>
+          <li>A fast, predictable process from first call to launch.</li>
+        </ul>
       </article>
 
-      <aside class="about-photo">
-        <img src="Happy.jpg" alt="Finesse Web Solutions team or workspace" />
-        <span>
-        </span>
+      <aside class="about-image">
+        <!-- Put an image like your team / workspace: about-team.jpg -->
+        <img src="about-team.jpg" alt="Finesse Web Solutions team or workspace" />
       </aside>
     </div>
   </section>
 
-  <!-- OUR MISSION -->
+  <!-- 3 EXAMPLE WEBSITES -->
   <section class="section">
     <div class="section-header">
-      <h2 class="section-title">Our mission</h2>
+      <h2 class="section-title">Example websites we can build</h2>
       <p class="section-sub">
-        Every website we build has a clear purpose behind it. Our mission is to
-        give you a simple, stress-free way to finally get a professional online
-        presence in place.
+        Here are three demo styles that show how we present different kinds of
+        businesses clearly and professionally.
       </p>
     </div>
 
-    <div class="mission-grid">
-      <article class="card">
-        <div class="mission-pill">Clarity</div>
-        <h3>Make your business easy to understand</h3>
-        <p>
-          Visitors should instantly know who you serve and what you offer.
-          We structure your website so a potential customer can quickly see
-          if you are the right fit for them.
-        </p>
+    <div class="portfolio-grid">
+      <article class="portfolio-item">
+        <div class="portfolio-thumb">
+          <!-- Put a screenshot for a service business at: example-service.jpg -->
+          <img src="example-service.jpg" alt="Example service business website" />
+        </div>
+        <h3>Local Service Business</h3>
+        <div class="portfolio-tagline">
+          A clean, trustworthy site for a local service provider (like a plumber,
+          roofer, or cleaner).
+        </div>
+        <div class="portfolio-meta">
+          Focus: clear services, strong call-to-call button, simple contact section.
+        </div>
       </article>
 
-      <article class="card">
-        <div class="mission-pill">Trust</div>
-        <h3>Help you look established and reliable</h3>
-        <p>
-          A clean, well-organized website sends a simple signal:
-          this business is serious. Our mission is to present you online
-          in a way that feels consistent and trustworthy.
-        </p>
+      <article class="portfolio-item">
+        <div class="portfolio-thumb">
+          <!-- Put a screenshot for a restaurant at: example-restaurant.jpg -->
+          <img src="example-restaurant.jpg" alt="Example restaurant or cafe website" />
+        </div>
+        <h3>Restaurant or Café</h3>
+        <div class="portfolio-tagline">
+          A bright layout that highlights your menu, photos, and how to visit or
+          order.
+        </div>
+        <div class="portfolio-meta">
+          Focus: menu overview, hours &amp; location, and easy phone call button.
+        </div>
       </article>
 
-      <article class="card">
-        <div class="mission-pill">Momentum</div>
-        <h3>Get your website live without delay</h3>
-        <p>
-          Instead of dragging on for weeks or months, our process is set up
-          so you go from first call to published website in a very short,
-          focused timeline.
-        </p>
+      <article class="portfolio-item">
+        <div class="portfolio-thumb">
+          <!-- Put a screenshot for a professional service at: example-pro.jpg -->
+          <img src="example-pro.jpg" alt="Example professional services website" />
+        </div>
+        <h3>Professional Services</h3>
+        <div class="portfolio-tagline">
+          A modern, minimal site for consultants, coaches, or other professional
+          services.
+        </div>
+        <div class="portfolio-meta">
+          Focus: what you offer, who you help, and a simple way to book a call.
+        </div>
       </article>
     </div>
   </section>
@@ -631,7 +631,7 @@
 <footer>
   &copy; <span id="year"></span> Finesse Web Solutions. All rights reserved.
   &nbsp;&middot;&nbsp;
-  <a href="tel:+14437972249">Call (443) 797-2249 to get started.</a>
+  <a href="tel:14437972249">Contact us at (443) 797-2249</a>
 </footer>
 
 <script>
